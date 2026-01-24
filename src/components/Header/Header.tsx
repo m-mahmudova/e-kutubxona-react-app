@@ -28,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({ search, setSearch }) => {
   };
   return (
     <header className="header">
+      <div className="header-container">
       <Logo />
       <i
         className="fa-solid fa-bars hamburger"
@@ -37,20 +38,16 @@ const Header: React.FC<HeaderProps> = ({ search, setSearch }) => {
         <Navigation />
         <SearchBar search={search} setSearch={setSearch} />
         <AuthBox isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-        <Link to="/cart">
-          <img
-            src="/images/shopping-basket (1).png"
-            width="50"
-            height="36"
-            alt="cart"
-            style={{ filter: "brightness(0) invert(1)" }}
-          />
-        </Link>
+        <Link to="/cart" className="cart-icon">
+  <img src="/images/shopping-basket (1).png" alt="cart" />
+</Link>
+
         <ThemeToggle
           darkMode={darkMode}
           toggle={() => setDarkMode(!darkMode)}
         />
       </nav>
+      </div>
     </header>
   );
 };

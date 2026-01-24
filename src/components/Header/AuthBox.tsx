@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface AuthBoxProps {
   isLoggedIn: boolean;
@@ -12,24 +12,24 @@ const AuthBox: React.FC<AuthBoxProps> = ({ isLoggedIn, onLogout }) => {
         <>
           <Link to="/login" className="auth-item">
             <i className="fa-solid fa-key"></i>
-            <span>Kirish</span>
+            <span className="auth-text">Kirish</span>
           </Link>
 
           <Link to="/register" className="auth-item">
             <i className="fa-solid fa-user"></i>
-            <span>Ro‘yxatdan o‘tish</span>
+            <span className="auth-text">Ro‘yxatdan o‘tish</span>
           </Link>
         </>
       ) : (
         <>
           <div className="auth-item">
             <i className="fa-solid fa-user"></i>
-            <span>Profil</span>
+            <span className="auth-text">Profil</span>
           </div>
 
           <button onClick={onLogout} className="auth-item logout">
             <i className="fa-solid fa-right-from-bracket"></i>
-            <span>Chiqish</span>
+            <span className="auth-text">Chiqish</span>
           </button>
         </>
       )}
