@@ -1,0 +1,56 @@
+.register-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f3f3f3, #e6e6f0);
+}
+
+/* ASOSIY O‘ZGARISH SHU YERDA */
+.register-card {
+  background: #ffffff;
+  padding: 40px 45px;           /* ⬅ balandlikni oshiradi */
+  border-radius: 14px;
+  width: 800px;
+  min-height: 520px;            /* ⬅ muhim */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.register-card h2 {
+  text-align: center;
+  margin-bottom: 30px;          /* ⬅ yuqori/pastki bo‘shliq */
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.register-card input {
+  width: 100%;
+  padding: 14px;                /* ⬅ input balandroq */
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.register-card .row {
+  display: flex;
+  gap: 15px;
+}
+
+.register-card button {
+  width: 100%;
+  padding: 14px;
+  background: #5a5cf0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}

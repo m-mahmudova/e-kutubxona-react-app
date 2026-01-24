@@ -1,0 +1,122 @@
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6fb;
+}
+
+.login-card {
+  width: 420px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* HEADER */
+.login-header {
+  background: #5f88d3;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* FORM */
+.login-form {
+  padding: 25px;
+}
+
+.login-form label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.login-form label span {
+  color: red;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  border: 1px solid #b5c9f5;
+  margin-bottom: 15px;
+}
+
+/* LOGIN GROUP */
+.login-input-group {
+  display: flex;
+}
+
+.login-input-group input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.domain-btn {
+  background: #5f88d3;
+  color: #fff;
+  border: none;
+  padding: 0 14px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+/* PASSWORD */
+.password-group {
+  position: relative;
+}
+
+.password-group .eye {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* CAPTCHA */
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.refresh {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0aa19a;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* LINKS */
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.login-links a {
+  font-size: 14px;
+  color: #4a6cf7;
+  text-decoration: none;
+}
