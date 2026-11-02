@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import "../style1.css";
 
@@ -9,27 +10,30 @@ import Books from "../components/BookList";
 
 function Home() {
   const [darkMode, setDarkMode] = useState(false);
-const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
+
+  const base = import.meta.env.BASE_URL;
+
+  // Slider rasmlari
   const slides = [
-    "/images/slider1.jpg",
-    "/images/slider2.jpg",
-    "/images/slider3.jpg",
+    `${base}images/slider1.jpg`,
+    `${base}images/slider2.jpg`,
+    `${base}images/slider3.jpg`,
   ];
 
-  const books = [
-    "/images/12.jpg",
-    "/images/2.jpg",
-    "/images/3.jpg",
-    "/images/4.jpg",
-    "/images/5.jpg",
-    "/images/6.jpg",
-    "/images/7.jpg",
-    "/images/8.jpg",
-    "/images/9.jpg",
-    "/images/10..jpg",
-    "/images/4.jpg",
-    "/images/1.jpg",
-  ];
+  // public/images papkasidagi rasmlarni avtomatik olish
+  const books = Object.keys(
+    import.meta.glob("/public/images/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      query: "?url",
+      import: "default",
+    })
+  )
+    .filter((path) => !path.toLowerCase().includes("slider"))
+    .sort((a, b) =>
+      a.localeCompare(b, undefined, { numeric: true })
+    )
+    .map((path) => `${base}${path.replace("/public/", "")}`);
 
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -42,8 +46,6 @@ const [search, setSearch] = useState("");
 
   return (
     <div className={darkMode ? "dark" : ""}>
-    
-
       <div className="container">
         <Sidebar />
 
@@ -64,11 +66,13 @@ const [search, setSearch] = useState("");
             </div>
           </section>
 
-          <Books books={books} book={book} setBooks={setBooks} />
+          <Books
+            books={books}
+            book={book}
+            setBooks={setBooks}
+          />
         </main>
       </div>
-
-    
     </div>
   );
 }
